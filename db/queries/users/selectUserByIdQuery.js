@@ -1,5 +1,5 @@
-const getDB = require("../../getDB");
-const { generateError } = require("../../../helpers");
+const getDB = require('../../getDB');
+const { generateError } = require('../../../helpers');
 
 // Consulta para seleccionar un usuario por su ID.
 const selectUserByIdQuery = async (userId) => {
@@ -8,13 +8,14 @@ const selectUserByIdQuery = async (userId) => {
   try {
     connection = await getDB();
 
+    // Consultar un usuario por su id
     const [users] = await connection.query(
       `SELECT id, email, username, password, createdAt  FROM users WHERE id = ?`,
       [userId]
     );
 
     if (users.length < 1) {
-      generateError("Usuario no encontrado", 404);
+      generateError('Usuario no encontrado', 404);
     }
 
     return users[0];

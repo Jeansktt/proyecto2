@@ -47,13 +47,10 @@ Descripción del proyecto.
 - GET [/notes/:noteId] - Obtiene información de una nota específica.✅
 - POST [/notes] - Crea una nueva nota. ✅
 - PUT [/notes/:noteId] - Modificar una nota existente.✅
-
-- # Opcional notas:
-
 - PUT [/notes/:noteId/public] - Editar la privacidad de la nota. ✅
 - DELETE [/notes/:noteId/delete] - Elimina una nota. ✅
 
-# Opcional categorias:
+# Categorias:
 
 - POST [/categories] Crea una nueva categoria. ✅
 - GET [/categories] - Devuelve todas las categorias. ✅

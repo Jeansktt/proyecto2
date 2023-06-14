@@ -1,5 +1,5 @@
-const getDB = require("../../getDB");
-const bcrypt = require("bcrypt");
+const getDB = require('../../getDB');
+const bcrypt = require('bcrypt');
 const { generateError } = require('../../../helpers');
 
 const insertUserQuery = async (email, username, password) => {
@@ -8,21 +8,22 @@ const insertUserQuery = async (email, username, password) => {
   try {
     connection = await getDB();
 
+    // Verificar si ya existe un usuario con el mismo email
     let [users] = await connection.query(
       `SELECT id FROM users WHERE email = ?`,
       [email]
     );
 
     if (users.length > 0) {
-      generateError("Ya existe un usuario con este email", 403);
+      generateError('Ya existe un usuario con este email', 403);
     }
-
+    // Verificar si ya existe un usuario con el mismo nombre de usuario
     [users] = await connection.query(
       `SELECT id FROM users WHERE username = ?`,
       [username]
     );
     if (users.length > 0) {
-      generateError("Ya existe un usuario con este nombre", 403);
+      generateError('Ya existe un usuario con este nombre', 403);
     }
 
     // Encriptamos la contraseña.

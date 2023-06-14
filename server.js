@@ -46,16 +46,6 @@ app.get('/users/:userId', getUser);
 // Obtener información del usuario del token.
 app.get('/users', authUser, getUser);
 
-// const schema = Joi.number().positive().integer();
-
-// const validation = schema.validate(req.params.idUser);
-
-// if (validation.error) {
-//   console.error(validation.error.message);
-// }
-
-//obtener info del usuario del token
-
 /*#################################
   ####### Middleware notes#########
   #################################*/

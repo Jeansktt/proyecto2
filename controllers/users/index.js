@@ -1,10 +1,9 @@
-const newUser = require("./newUser");
-const loginUser = require("./loginUser");
-const getUser = require("./getUser");
-const getOwnUser = require("./getOwnUser");
+const newUser = require('./newUser');
+const loginUser = require('./loginUser');
+const getUser = require('./getUser');
 
 module.exports = {
   newUser,
   loginUser,
+  getUser,
 };
-//estar atento a estos cambios , se añadió getUser y getOwnnUser

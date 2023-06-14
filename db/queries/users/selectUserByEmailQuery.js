@@ -1,4 +1,4 @@
-const getDB = require("../../getDB");
+const getDB = require('../../getDB');
 const { generateError } = require('../../../helpers');
 
 // Consulta para seleccionar un usuario por su email.
@@ -8,13 +8,14 @@ const selectUserByEmailQuery = async (email) => {
   try {
     connection = await getDB();
 
+    // Consultar un usuario por su email
     const [users] = await connection.query(
-      `SELECT id, password  FROM users WHERE email = ?`, // se retirò el rol
+      `SELECT id, password  FROM users WHERE email = ?`,
       [email]
     );
 
     if (users.length < 1) {
-      generateError("Usuario no encontrado", 404);
+      generateError('Usuario no encontrado', 404);
     }
 
     return users[0];

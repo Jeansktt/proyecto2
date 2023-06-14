@@ -1,4 +1,3 @@
-const { getDB, generateError } = require('../../helpers');
 const deleteCategoryQuery = require('../../db/queries/notes/deleteCategoryQuery');
 
 const deleteCategory = async (req, res, next) => {

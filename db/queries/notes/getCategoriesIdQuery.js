@@ -6,16 +6,10 @@ const getCategoriesIdQuery = async (categoryId, userId = 0) => {
   try {
     connection = await getDB();
 
-    const [categories] = await connection.query(
-      `
-      SELECT
-        *
-      FROM
-        categories
-      
-      `,
-      [userId, categoryId]
-    );
+    const [categories] = await connection.query(` SELECT * FROM categories `, [
+      userId,
+      categoryId,
+    ]);
 
     // Si no hay notas, lanzamos un error.
     if (categories.length < 1) {

@@ -1,4 +1,4 @@
-const { getDB, generateError } = require('../../helpers');
+const { generateError } = require('../../helpers');
 const editCategoryQuery = require('../../db/queries/notes/editCategoryQuery');
 
 const editCategory = async (req, res, next) => {
